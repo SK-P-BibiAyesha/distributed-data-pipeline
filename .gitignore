@@ -1,0 +1,21 @@
+
+# Python virtual environments
+venv/
+ddp-venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+
+# Generated pipeline outputs
+output/
+data/processed/
+
+# IDE settings
+.vscode/
+.idea/
