@@ -1,56 +1,68 @@
-# Distributed Data Pipeline
+# Distributed Data Pipeline Using Apache Spark
+
+A Python-based data engineering project that processes sales data using Apache Spark. The pipeline demonstrates data ingestion, transformation, cleaning, and analytics generation.
 
 ## Project Overview
 
-A data engineering project that uses Apache Spark to ingest, clean, transform, and analyze sales data. The pipeline generates analytics datasets in Parquet format.
+This project processes raw sales records, handles data-quality issues, calculates revenue, and generates analytical outputs to support sales reporting.
 
 ## Technologies Used
 
-- Python 3.12
-- Apache PySpark 4.2.0
+- Python
+- Apache Spark (PySpark)
+- Pandas
 - PyArrow
-- pytest
 - Parquet
+- Pytest
+- Git and GitHub
+
+## Pipeline Workflow
+
+1. **Data Ingestion** — Read sales data from CSV files.
+2. **Data Transformation** — Calculate revenue using quantity and unit price.
+3. **Data Cleaning** — Handle duplicate records, missing values, invalid quantities and prices, and inconsistent text formatting.
+4. **Sales Analytics** — Aggregate revenue by product, category, and city, and generate product-performance results.
+5. **Testing** — Validate cleaning logic and analytical results.
 
 ## Project Structure
 
 ```text
 distributed-data-pipeline/
 ├── data/
-│   ├── raw/
-│   │   ├── sales.csv
-│   │   └── sales_messy.csv
-│   └── processed/
-│       └── clean_sales.parquet
+│   └── raw/
+│       ├── sales.csv
+│       └── sales_messy.csv
 ├── src/
 │   ├── ingest.py
-│   ├── clean.py
 │   ├── transform.py
+│   ├── clean.py
 │   └── analytics.py
 ├── tests/
 │   └── test_pipeline.py
 ├── requirements.txt
-└── run_pipeline.py
+├── run_pipeline.py
+├── .gitignore
+└── README.md
 ```
 
-## Pipeline Stages
+## Setup
 
-1. **Ingestion:** Read raw sales data from CSV files.
-2. **Cleaning:** Remove duplicate orders, missing values, and invalid quantities or prices.
-3. **Transformation:** Calculate revenue and prepare the data for analysis.
-4. **Analytics:** Generate product, category, and city revenue summaries.
-5. **Storage:** Save processed data and analytics results in Parquet format.
-6. **Testing:** Validate cleaning logic, output datasets, and revenue calculations.
-
-## How to Run
-
-Activate the virtual environment:
+Create and activate a Python virtual environment:
 
 ```bash
-source ~/ddp-venv/bin/activate
+python3 -m venv ddp-venv
+source ddp-venv/bin/activate
 ```
 
-Run the pipeline:
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run the Pipeline
+
+Run the complete workflow:
 
 ```bash
 python run_pipeline.py
@@ -59,22 +71,42 @@ python run_pipeline.py
 Run the tests:
 
 ```bash
-python -m pytest -v
+pytest -v
 ```
 
-## Output Datasets
+## Data Quality Checks
 
-- `revenue_by_product`
-- `revenue_by_category`
-- `revenue_by_city`
-- `product_performance`
+The cleaning stage demonstrates handling of:
 
-Analytics outputs are saved under `~/ddp-output/`.
+- Duplicate orders
+- Missing required fields
+- Non-positive quantities and unit prices
+- Leading or trailing whitespace in text fields
+- Revenue calculation
 
-## Current Status
+## Analytics
 
-- Data ingestion implemented.
-- Data cleaning implemented.
-- Sales analytics implemented.
-- Parquet outputs generated.
-- Three automated tests passing.
+The analytics stage generates outputs for:
+
+- Revenue by product
+- Revenue by category
+- Revenue by city
+- Product performance
+
+The current implementation runs Spark in local mode. It is a project demonstrating distributed-data-processing concepts; it has not been configured as a multi-node Spark cluster.
+
+## Output
+
+Cleaned data is saved in Parquet format. Analytics outputs are written to the locations configured in `src/analytics.py`.
+
+## Future Improvements
+
+- Add automated data-quality reporting.
+- Integrate a persistent data warehouse.
+- Schedule pipeline execution.
+- Deploy Spark on a multi-node cluster.
+- Add visual dashboards for sales analytics.
+
+## Author
+
+Project developed as a hands-on data engineering project using Python and Apache Spark.
