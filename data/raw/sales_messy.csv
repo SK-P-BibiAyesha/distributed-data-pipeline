@@ -1,0 +1,21 @@
+order_id,customer_id,product,category,quantity,unit_price,order_date,city
+1001,C001,Laptop,Electronics,2,55000,2026-01-05,Guntur
+1002,C002,Smartphone,Electronics,1,25000,2026-01-08,Vijayawada
+1003,C003,Office Chair,Furniture,3,8500,2026-01-12,Guntur
+1004,C004,Keyboard,Accessories,5,1200,2026-01-15,Hyderabad
+1005,C005,Laptop,Electronics,1,55000,2026-01-20,Vijayawada
+1006,C006,Desk,Furniture,2,12000,2026-02-02,Hyderabad
+1007,C007,Mouse,Accessories,4,800,2026-02-05,Guntur
+1008,C008,Smartphone,Electronics,2,25000,2026-02-10,Chennai
+1009,C009,Monitor,Electronics,2,18000,2026-02-14,Guntur
+1010,C010,Office Chair,Furniture,1,8500,2026-02-18,Vijayawada
+10011,C011,Laptop,Electronics,1,55000,2026-03-03,Hyderabad
+10012,C012,Mouse,Accessories,6,800,2026-03-07,Guntur
+10013,C013,Desk,Furniture,1,12000,2026-03-12,Chennai
+10014,C014,Keyboard,Accessories,3,1200,2026-03-15,Vijayawada
+10015,C015,Monitor,Electronics,4,18000,2026-03-20,Hyderabad
+1001,C001,Laptop,Electronics,2,55000,2026-01-05,Guntur
+10016,C016,Keyboard,Accessories,-2,1200,2026-03-22,Hyderabad
+10017,C017,Mouse,Accessories,3,-800,2026-03-24,Guntur
+10018,C018,Monitor,Electronics,,18000,2026-03-25,Chennai
+10019,C019,,Electronics,1,25000,2026-03-26,Vijayawada
